@@ -1,5 +1,7 @@
 # es-bet
 
+<img src="./frontend/public/favicon.ico" alt="logo" width="120"/>
+
 Um site de apostas esportivas de jogos eletronicos, no qual possui as seguintes entidades:
  - Jogos (Counter Strike, Valorant, COD, LOL, etc..)
  - Times 
@@ -14,3 +16,7 @@ A aplicação terá:
  - uma tela para realização das apostas, onde um Apostador seleciona um Jogo, depois uma partida, escolhe um time vencedor e o quanto deseja apostar.
  - uma tela para os administradores definirem os resultados finais dos jogos, para que assim o sistema recompense os vencedores.
  - um componente específico pra mostrar a porcentagem atual de apostas no time (ou probabilidades desse time vencer) ao usuário passar o mouse por cima dele.
+
+
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/anggara" title="Anggara">Anggara</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
