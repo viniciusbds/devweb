@@ -15,7 +15,7 @@ A aplicação terá:
  - um CRUD e uma tela de cadastro para `Jogos`, `Times`, `Apostadores`, `Partidas` e `Administradores`.
  - uma tela para realização das apostas, onde um Apostador seleciona um Jogo, depois uma partida, escolhe um time vencedor e o quanto deseja apostar.
  - uma tela para os administradores definirem os resultados finais dos jogos, para que assim o sistema recompense os vencedores.
- - um componente específico pra mostrar a porcentagem atual de apostas no time (ou probabilidades desse time vencer) ao usuário passar o mouse por cima dele.
+ - um componente específico pra mostrar a porcentagem atual de apostas no time ao usuário passar o mouse por cima dele. Dessa forma, o apostador pode verificar qual a tendencia das apostas e tomar uma decisão em relação a isso. Esse componente também deve mostrar qual seria o rendimento, naquele instante, do usuário caso o time que ele selecionou vencesse, por exemplo: 1.3x, indicando que teria um lucro de 30%.
 
 
 
