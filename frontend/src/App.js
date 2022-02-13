@@ -1,21 +1,20 @@
-import './App.css';
+import React, { useState } from 'react';
 import Bet from './components/BetComponent';
 
-let game = "CS GO";
-let team1 = "NAVI";
-let team2 = "Vitallity";
-
 function App() {
+  const [game] = useState('CS GO');
+  const [teams] = useState(['NAVI', 'Vitallity']);
+
   return (
     <div className="App">
       <header>
-        <div class="logo-div">
-          <img src="./favicon.ico" alt="logo"/>
+        <div className="logo-div">
+          <img src="./favicon.ico" alt="logo" />
           <p>esbet</p>
         </div>
         <h2>Faça a sua aposta torcedor!</h2>
       </header>
-      <Bet jogo={game} team1={team1} team2={team2}/>
+      <Bet game={game} team1={teams[0]} team2={teams[1]} />
     </div>
   );
 }
