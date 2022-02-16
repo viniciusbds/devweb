@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Bet from './components/BetComponent';
+import MatchesList from './components/MatchesList';
 
 function App() {
   const [game] = useState('CS GO');
@@ -15,6 +16,7 @@ function App() {
         <h2>Faça a sua aposta torcedor!</h2>
       </header>
       <Bet game={game} team1={teams[0]} team2={teams[1]} />
+      <MatchesList />
     </div>
   );
 }

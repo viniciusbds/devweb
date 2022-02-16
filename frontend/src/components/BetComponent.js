@@ -69,11 +69,7 @@ function BetComponent(props) {
 BetComponent.propTypes = {
   game: PropTypes.string.isRequired,
   team1: PropTypes.string.isRequired,
-  team2: PropTypes.string,
-};
-
-BetComponent.defaultProps = {
-  team2: 'THE LAST DANCE',
+  team2: PropTypes.string.isRequired,
 };
 
 export default BetComponent;
