@@ -5,12 +5,12 @@ function MatchesList() {
   const [matches, setMatches] = useState([]);
 
   useEffect(() => {
-    const response = fetch('http://localhost:3005/matches');
-    response.then((res) => {
-      res.json().then((m) => {
-        setMatches(m);
-      });
-    });
+    async function fetchData() {
+      const response = await fetch('http://localhost:3005/matches');
+      const data = await response.json();
+      setMatches(data);
+    }
+    fetchData();
   }, []);
 
   return (
