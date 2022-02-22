@@ -7,25 +7,10 @@ function BetComponent(props) {
   const [selectedTeam, setSelectedTeam] = useState();
   const [betAmount, setBetAmount] = useState(0);
 
-  const alerta = () => { alert(`apostou ${betAmount} R$ na equipe ${selectedTeam}`); };
+  const alerta = () => { alert(`apostou ${betAmount} R$ na equipe ${selectedTeam} do jogo: ${game}`); };
 
   return (
     <form className="bet">
-      <p>
-        <strong>
-          {game}
-          {' '}
-          |
-          {' '}
-          {team1}
-          {' '}
-          vs
-          {' '}
-          {team2}
-        </strong>
-      </p>
-
-      <p>Escolha o time vencedor:</p>
 
       <select
         value={selectedTeam}
@@ -34,6 +19,7 @@ function BetComponent(props) {
           setSelectedTeam(newTeam);
         }}
       >
+        <option value=""> </option>
         <option value={team1}>{team1}</option>
         <option value={team2}>{team2}</option>
       </select>
@@ -49,8 +35,8 @@ function BetComponent(props) {
         />
       </section>
 
-      <p>
-        * Confirmo a aposta de
+      <p id="confirm-msg">
+        Confirmo a aposta de
         <strong>
           {betAmount}
           {' '}

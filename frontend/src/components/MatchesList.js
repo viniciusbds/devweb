@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MatchComponent from './MatchComponent';
+import './MatchesList.css';
 
 function MatchesList() {
   const [matches, setMatches] = useState([]);
@@ -15,7 +16,7 @@ function MatchesList() {
 
   return (
     <div>
-      <p>Lista de apostas</p>
+      <p>Lista com todas apostas possíveis (por enquanto, sem filtro)</p>
       <section>
         {matches.map((m) => (
           <MatchComponent
