@@ -16,7 +16,7 @@ function MatchesList() {
 
   return (
     <div>
-      <p>Lista com todas apostas possíveis (por enquanto, sem filtro)</p>
+      <p>Lista de apostas</p>
       <section>
         {matches.map((m) => (
           <MatchComponent
