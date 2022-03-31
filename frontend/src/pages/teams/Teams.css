@@ -1,0 +1,14 @@
+.teams {
+    text-align: center;
+    color: rgb(47, 187, 223);
+    vertical-align: middle;
+    padding: 200px 0;
+}
+
+
+.new-team-btn {
+    width:100%;
+    margin-left: 82%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,19 @@
+h2 {
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+
+}
+  
+.logo img {
+    width: 50px;
+}
+
+.logo p {
+    /* height: 100%; */
+    vertical-align: middle;
+    color: rgb(47, 187, 223);
+    font-size: 20px;
+}

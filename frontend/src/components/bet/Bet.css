@@ -1,0 +1,38 @@
+form {
+  padding: 20px;
+}
+
+.match {
+  display: grid;
+  border-radius: 1%;
+  width: 60%;
+  height: 100%;
+  background-color: rgba(241, 241, 241, 0.808);
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(0, 0, 0);
+  border-color: rgb(47, 187, 223);
+  border-style: solid;
+  border-width: 2px;
+
+  margin-bottom: 10px;
+  
+  /* border-bottom: 10px; */
+}
+.match #game{
+  text-align: center;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.match #teams{
+  text-align: center;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.match #date{
+  text-align: center;
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

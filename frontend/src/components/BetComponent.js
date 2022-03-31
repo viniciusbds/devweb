@@ -1,58 +1,88 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './BetComponent.css';
+import { useNavigate } from 'react-router-dom';
+import {
+  Select, Button, InputNumber, Form,
+} from 'antd';
 import LanguageContext from '../utils/context/LanguageContext';
+import BetService from '../services/BetService';
+
+const { Option } = Select;
 
 function BetComponent(props) {
-  const { game, team1, team2 } = props;
+  const {
+    matche, team1, team1ID, team2, team2ID,
+  } = props;
+  const [form] = Form.useForm();
+
   const [selectedTeam, setSelectedTeam] = useState();
+
   const [betAmount, setBetAmount] = useState(0);
   const [language, setLanguage] = useState('');
+  const [useremail] = useState(sessionStorage.getItem('email_user'));
+  const navigate = useNavigate();
 
-  const alerta = () => { alert(`apostou ${betAmount} R$ na equipe ${selectedTeam} do jogo: ${game}`); };
+  const bet = async () => {
+    await BetService.create({
+      matcheID: matche,
+      userEmail: useremail,
+      ammount: betAmount,
+      teamWinner: selectedTeam,
+    });
+    navigate('/bets');
+  };
 
   return (
     <>
       <LanguageContext.Consumer>
         {(value) => setLanguage(value)}
       </LanguageContext.Consumer>
-      <form className="bet">
+      <Form
+        className="bet"
+        form={form}
+      >
 
-        <select
-          value={selectedTeam}
-          onChange={(e) => {
-            const newTeam = e.target.value;
-            setSelectedTeam(newTeam);
-          }}
+        <Form.Item
+          name="winnerTeam"
         >
-          <option value=""> </option>
-          <option value={team1}>{team1}</option>
-          <option value={team2}>{team2}</option>
-        </select>
+          <Select
+            value={selectedTeam}
+            onChange={(team) => {
+              setSelectedTeam(team);
+            }}
+            placeholder={language === 'pt-br' ? 'Equipe' : 'Team'}
+          >
+            <Option value={team1ID}>{team1}</Option>
+            <Option value={team2ID}>{team2}</Option>
+          </Select>
+        </Form.Item>
 
-        <section>
-          <input
-            type="number"
-            id="contactChoice2"
+        <Form.Item
+          name="value"
+        >
+          <InputNumber
+            style={{ width: '100%' }}
+            min={1}
             placeholder="R$"
-            onChange={(e) => {
-              setBetAmount(e.target.value);
+            onChange={(v) => {
+              setBetAmount(v);
             }}
           />
-        </section>
+        </Form.Item>
 
         {language === 'pt-br'
           ? (
             <p id="confirm-msg">
               Confirmo a aposta de
+              {' '}
               <strong>
                 {betAmount}
                 {' '}
                 R$
               </strong>
               {' '}
-              na equipe
-              <strong>{selectedTeam}</strong>
+              nessa equipe
             </p>
           )
           : (
@@ -72,17 +102,26 @@ function BetComponent(props) {
             </p>
           )}
 
-        <button type="button" onClick={alerta}>{language === 'pt-br' ? 'Apostar' : 'Bet'}</button>
+        <Button
+          type="button"
+          onClick={bet}
+        >
+          {language === 'pt-br' ? 'Apostar' : 'Bet'}
 
-      </form>
+        </Button>
+
+      </Form>
     </>
   );
 }
 
 BetComponent.propTypes = {
-  game: PropTypes.string.isRequired,
+  matche: PropTypes.string.isRequired,
   team1: PropTypes.string.isRequired,
+  team1ID: PropTypes.string.isRequired,
   team2: PropTypes.string.isRequired,
+  team2ID: PropTypes.string.isRequired,
+
 };
 
 export default BetComponent;

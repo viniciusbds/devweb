@@ -1,5 +1,5 @@
 
-form, select, input, button{
+Form, Select, Button {
   padding: 12px 15px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -7,25 +7,26 @@ form, select, input, button{
 }
 
 .bet {
-  display: flex;
+  display: grid;
   border-radius: 1%;
   width: 100%;
-  background-color: rgba(47, 188, 223, 0.685);
+  /* background-color: rgb(216, 227, 230); */
   justify-content: center;
-  /* margin-left: auto; */
-  /* margin-right: auto; */
   color: rgb(33, 34, 46);
 }
 
-.bet input, select {
-  width: 100px;
-  height: 45px;
-  /* margin: 8px 0; */
-  align-items: center;
+.bet InputNumber {
+  width: 100%;
 }
 
-.bet #confirm-msg {
+/* .bet input, select {
+  width: 100px;
+  height: 45px;
+  align-items: center;
+} */
+
+/* .bet #confirm-msg {
   width: 300px;
   align-items: center;
   text-align: center;
-}
+} */

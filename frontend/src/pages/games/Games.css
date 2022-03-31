@@ -1,0 +1,13 @@
+.intro {
+    text-align: center;
+    color: rgb(47, 187, 223);
+    vertical-align: middle;
+    padding: 200px 0;
+}
+
+.new-game-btn {
+    width:100%;
+    margin-left: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
