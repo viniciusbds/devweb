@@ -65,21 +65,6 @@ function Bet(props) {
           </p>
         </div>
       </section>
-      {/*
-      {matches.map((m) => (
-        <section>
-          <p id="name">
-            {getGameNameByID(m.game)}
-            {' '}
-          </p>
-          <p id="team1vsteam2">
-            {m.team1}
-            vs
-            {m.team2}
-          </p>
-        </section>
-
-      ))} */}
 
       <p id="name">
         {matche.date}

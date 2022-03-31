@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './BetComponent.css';
+import './NewBetComponent.css';
 import { useNavigate } from 'react-router-dom';
 import {
   Select, Button, InputNumber, Form,
 } from 'antd';
-import LanguageContext from '../utils/context/LanguageContext';
-import BetService from '../services/BetService';
+import LanguageContext from '../../utils/context/LanguageContext';
+import BetService from '../../services/BetService';
 
 const { Option } = Select;
 
-function BetComponent(props) {
+function NewBetComponent(props) {
   const {
     matche, team1, team1ID, team2, team2ID,
   } = props;
@@ -115,7 +115,7 @@ function BetComponent(props) {
   );
 }
 
-BetComponent.propTypes = {
+NewBetComponent.propTypes = {
   matche: PropTypes.string.isRequired,
   team1: PropTypes.string.isRequired,
   team1ID: PropTypes.string.isRequired,
@@ -124,4 +124,4 @@ BetComponent.propTypes = {
 
 };
 
-export default BetComponent;
+export default NewBetComponent;

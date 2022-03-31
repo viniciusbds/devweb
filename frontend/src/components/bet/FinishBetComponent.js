@@ -4,9 +4,9 @@ import './FinishBetComponent.css';
 import {
   Form, Select, Button,
 } from 'antd';
-import LanguageContext from '../utils/context/LanguageContext';
-import BetService from '../services/BetService';
-import MatcheService from '../services/MatchService';
+import LanguageContext from '../../utils/context/LanguageContext';
+import BetService from '../../services/BetService';
+import MatcheService from '../../services/MatchService';
 
 const { Option } = Select;
 

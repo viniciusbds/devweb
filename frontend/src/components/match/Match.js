@@ -5,10 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import {
   Button,
 } from 'antd';
-import Bet from '../BetComponent';
+import NewBetComponent from '../bet/NewBetComponent';
 import LanguageContext from '../../utils/context/LanguageContext';
-import FinishBetComponent from '../FinishBetComponent';
-// import BetService from '../services/BetService';
+import FinishBetComponent from '../bet/FinishBetComponent';
 
 function Match(props) {
   const {
@@ -141,38 +140,10 @@ function Match(props) {
 
             </>
           );
-          // return (
-          //   <>
-          //     <button
-          //       id="bet-button"
-          //       onClick={(e) => {
-          //         e.preventDefault();
-          //         navigate(`/matches/edit/${id}`);
-          //       }}
-          //       type="button"
-          //     >
-
-          //       {language === 'pt-br' ? 'Editar' : 'Edit'}
-
-          //     </button>
-          //     <button
-          //       id="bet-button"
-          //       onClick={(e) => {
-          //         e.preventDefault();
-          //         navigate('/matches');
-          //       }}
-          //       type="button"
-          //     >
-
-          //       {language === 'pt-br' ? 'Fechar Partida' : 'Close Matche'}
-
-          //     </button>
-          //   </>
-          // );
         })()}
 
         {showComponent ? (
-          <Bet
+          <NewBetComponent
             matche={id}
             team1={team1}
             team1ID={team1ID}
